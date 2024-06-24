@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Galaxy Restaurant</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('BG DESIGN.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #540ff5;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #0703fa;
+            color: rgb(42, 223, 255);
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+        .menu-section {
+            margin: 20px 0;
+        }
+        .menu-item {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #489df3;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(245, 241, 241, 0.863);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(20% - 20px);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-item:hover {
+            transform: scale(1.1);
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-bottom: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .menu-item p {
+            margin: 0;
+            color: #495057;
+            font-weight: bold;
+        }
+        .menu-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(42, 223, 255);
+        }
+        .menu-section .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .price, .stock, .quantity {
+            margin: 5px 0;
+        }
+        #total-value {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(42, 223, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Gourmet Galaxy Restaurant</h1>
+
+        <section class="menu-section">
+            <h2>Main Dishes</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="Garlic-Butter-Shrimp-4.jpg" alt="Garlic Butter Shrimp" class="img-fluid">
+                    <p>Garlic Butter Shrimp</p>
+                    <span class="price">Php 2500</span>
+                    <span class="stock">Stock: 10</span>
+                    <input type="number" class="quantity" value="0" min="0" max="10">
+                </div>
+                <div class="menu-item">
+                    <img src="Parmesan-Roasted-Brussels-Sprouts.jpg" alt="Parmesan Roasted Chicken" class="img-fluid">
+                    <p>Parmesan Roasted Chicken</p>
+                    <span class="price">Php 2820</span>
+                    <span class="stock">Stock: 8</span>
+                    <input type="number" class="quantity" value="0" min="0" max="8">
+                </div>
+                <div class="menu-item">
+                    <img src="fbce9-pancitcantonrecipe.jpg" alt="Pancit Canton" class="img-fluid">
+                    <p>Pancit Canton</p>
+                    <span class="price">Php 2520</span>
+                    <span class="stock">Stock: 15</span>
+                    <input type="number" class="quantity" value="0" min="0" max="15">
+                </div>
+                <div class="menu-item">
+                    <img src="lo-tenderloin-mk4-smoke-75-of-86.jpg" alt="Smoke Beef" class="img-fluid">
+                    <p>Smoke Beef</p>
+                    <span class="price">Php 2150</span>
+                    <span class="stock">Stock: 5</span>
+                    <input type="number" class="quantity" value="0" min="0" max="5">
+                </div>
+                <div class="menu-item">
+                    <img src="_Quick Bacon Spaghetti Carbonara.jpeg" alt="Quick Bacon Spaghetti Carbonara" class="img-fluid">
+                    <p>Quick Bacon Spaghetti Carbonara</p>
+                    <span class="price">Php 2550</span>
+                    <span class="stock">Stock: 12</span>
+                    <input type="number" class="quantity" value="0" min="0" max="12">
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Vegetable Dishes</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="Salad.jpg" alt="Salad" class="img-fluid">
+                    <p>Salad</p>
+                    <span class="price">Php 578</span>
+                    <span class="stock">Stock: 20</span>
+                    <input type="number" class="quantity" value="0" min="0" max="20">
+                </div>
+                <div class="menu-item">
+                    <img src="miso_glazed_japanese_eggplant.jpg" alt="Miso Glazed Japanese Eggplant" class="img-fluid">
+                    <p>Miso Glazed Japanese Eggplant</p>
+                    <span class="price">Php 950</span>
+                    <span class="stock">Stock: 18</span>
+                    <input type="number" class="quantity" value="0" min="0" max="18">
+                </div>
+                <div class="menu-item">
+                    <img src="Honey-Glazed-Carrots-1-2.jpg" alt="Honey Glazed Carrots" class="img-fluid">
+                    <p>Honey Glazed Carrots</p>
+                    <span class="price">Php 490</span>
+                    <span class="stock">Stock: 25</span>
+                    <input type="number" class="quantity" value="0" min="0" max="25">
+                </div>
+                <div class="menu-item">
+                    <img src="Roasted-Vegetables.jpg" alt="Roasted Vegetables" class="img-fluid">
+                    <p>Roasted Vegetables</p>
+                    <span class="price">Php 850</span>
+                    <span class="stock">Stock: 22</span>
+                    <input type="number" class="quantity" value="0" min="0" max="22">
+                </div>
+                <div class="menu-item">
+                    <img src="chop-suey.webp" alt="Chopsuey" class="img-fluid">
+                    <p>Chopsuey</p>
+                    <span class="price">Php 250</span>
+                    <span class="stock">Stock: 30</span>
+                    <input type="number" class="quantity" value="0" min="0" max="30">
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Meat Dishes</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="adobong-baboy.jpg" alt="Adobong Baboy" class="img-fluid">
+                    <p>Adobong Baboy</p>
+                    <span class="price">Php 1150</span>
+                    <span class="stock">Stock: 14</span>
+                    <input type="number" class="quantity" value="0" min="0" max="14">
+                </div>
+                <div class="menu-item">
+                    <img src="nilagang-baboy.jpg" alt="Nilagang Baboy" class="img-fluid">
+                    <p>Nilagang Baboy</p>
+                    <span class="price">Php 350</span>
+                    <span class="stock">Stock: 19</span>
+                    <input type="number" class="quantity" value="0" min="0" max="19">
+                </div>
+                <div class="menu-item">
+                    <img src="Sinigang-na-Baboy.jpg" alt="Sinigang na Baboy" class="img-fluid">
+                    <p>Sinigang na Baboy</p>
+                    <span class="price">Php 220</span>
+                    <span class="stock">Stock: 24</span>
+                    <input type="number" class="quantity" value="0" min="0" max="24">
+                </div>
+                <div class="menu-item">
+                    <img src="lechon-paksiw.webp" alt="Lechon Paksiw" class="img-fluid">
+                    <p>Lechon Paksiw</p>
+                    <span class="price">Php 290</span>
+                    <span class="stock">Stock: 17</span>
+                    <input type="number" class="quantity" value="0" min="0" max="17">
+                </div>
+                <div class="menu-item">
+                    <img src="inihaw-liempo.webp" alt="Inihaw Liempo" class="img-fluid">
+                    <p>Inihaw Liempo</p>
+                    <span class="price">Php 270</span>
+                    <span class="stock">Stock: 21</span>
+                    <input type="number" class="quantity" value="0" min="0" max="21">
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Chicken Dishes</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="Roast-Chicken-.jpg" alt="Roast Chicken" class="img-fluid">
+                    <p>Roast Chicken</p>
+                    <span class="price">Php 160</span>
+                    <span class="stock">Stock: 26</span>
+                    <input type="number" class="quantity" value="0" min="0" max="26">
+                </div>
+                <div class="menu-item">
+                    <img src="Tereyaki Chicken.jpg" alt="Tereyaki Chicken" class="img-fluid">
+                    <p>Tereyaki Chicken</p>
+                    <span class="price">Php 100</span>
+                    <span class="stock">Stock: 30</span>
+                    <input type="number" class="quantity" value="0" min="0" max="30">
+                </div>
+                <div class="menu-item">
+                    <img src="adobong manok.jpg" alt="Adobong Manok" class="img-fluid">
+                    <p>Adobong Manok</p>
+                    <span class="price">Php 300</span>
+                    <span class="stock">Stock: 22</span>
+                    <input type="number" class="quantity" value="0" min="0" max="22">
+                </div>
+                <div class="menu-item">
+                    <img src="fried Chicken.jpg" alt="Fried Chicken" class="img-fluid">
+                    <p>Fried Chicken</p>
+                    <span class="price">Php 690</span>
+                    <span class="stock">Stock: 12</span>
+                    <input type="number" class="quantity" value="0" min="0" max="12">
+                </div>
+                <div class="menu-item">
+                    <img src="mango-chicken-curry-102913-1.jpeg" alt="Mango Chicken Curry" class="img-fluid">
+                    <p>Mango Chicken Curry</p>
+                    <span class="price">Php 250</span>
+                    <span class="stock">Stock: 18</span>
+                    <input type="number" class="quantity" value="0" min="0" max="18">
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>Drinks</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="Buko Juice.jpg" alt="Buko Juice" class="img-fluid">
+                    <p>Buko Juice</p>
+                    <span class="price">Php 450</span>
+                    <span class="stock">Stock: 50</span>
+                    <input type="number" class="quantity" value="0" min="0" max="50">
+                </div>
+                <div class="menu-item">
+                    <img src="C2 GreenTea.jpg" alt="C2 GreenTea" class="img-fluid">
+                    <p>C2 GreenTea</p>
+                    <span class="price">Php 550</span>
+                    <span class="stock">Stock: 45</span>
+                    <input type="number" class="quantity" value="0" min="0" max="45">
+                </div>
+                <div class="menu-item">
+                    <img src="Guyabano Juice.jfif" alt="Guyabano Juice" class="img-fluid">
+                    <p>Guyabano Juice</p>
+                    <span class="price">Php 700</span>
+                    <span class="stock">Stock: 40</span>
+                    <input type="number" class="quantity" value="0" min="0" max="40">
+                </div>
+                <div class="menu-item">
+                    <img src="Green Apple.jfif" alt="Green Apple" class="img-fluid">
+                    <p>Green Apple</p>
+                    <span class="price">Php 350</span>
+                    <span class="stock">Stock: 55</span>
+                    <input type="number" class="quantity" value="0" min="0" max="55">
+                </div>
+                <div class="menu-item">
+                    <img src="WATER.jfif" alt="WATER" class="img-fluid">
+                    <p>WATER</p>
+                    <span class="price">Php 250</span>
+                    <span class="stock">Stock: 60</span>
+                    <input type="number" class="quantity" value="0" min="0" max="60">
+                </div>
+            </div>
+        </section>
+        
+        <div id="total-value">Total Value: Php <span id="total-price">0</span></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quantities = document.querySelectorAll('.quantity');
+            const prices = document.querySelectorAll('.price');
+            const totalPriceElement = document.getElementById('total-price');
+
+            function calculateTotal() {
+                let total = 0;
+
+                quantities.forEach((quantityElement, index) => {
+                    const quantity = parseFloat(quantityElement.value);
+                    const price = parseFloat(prices[index].textContent.replace('Php ', ''));
+                    total += quantity * price;
+                });
+
+                totalPriceElement.textContent = total;
+            }
+
+            quantities.forEach(quantityElement => {
+                quantityElement.addEventListener('input', calculateTotal);
+            });
+
+            calculateTotal();
+        });
+    </script>
+</body>
+</html>
