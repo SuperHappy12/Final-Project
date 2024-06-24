@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVAX SARI-SARI STORE</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-radius: 5px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product h2 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .product p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .product button {
+            background-color: #00e1fff8;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #0056b3;
+        }
+
+        .cart {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #00c298;
+            border: 5px solid #ff5f5f;
+            border-radius: 5px;
+        }
+
+        .cart h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart li {
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .cart .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart .quantity-controls button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .cart .quantity-controls button:hover {
+            background-color: #218838;
+        }
+
+        .discount {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .apply-discount {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .apply-discount:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">BOSS</div>
+    <h1>VIVAX STORE</h1>
+    <img src="mjlogo.png" alt="Logo" id="logo">
+</header>
+
+<div class="container">
+    <div class="products">
+        <div class="product" data-price="900" data-id="1" data-stock="10">
+            <img src="jeans.jpg" alt="Jeans">
+            <h2>JEANS</h2>
+            <p>Price: ₱900</p>
+            <p>Stock: <span class="stock">10</span></p>
+            <input type="number" min="1" max="15" class="quantity" value="">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-price="2000" data-id="2" data-stock="10">
+            <img src="T SHIRT.jpg" alt="T-Shirt">
+            <h2>T SHIRT</h2>
+            <p>Price: ₱2000</p>
+            <p>Stock: <span class="stock">10</span></p>
+            <input type="number" min="1" max="15" class="quantity" value="">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-price="3500" data-id="3" data-stock="10">
+            <img src="Best-Colognes.jpg" alt="Perfume">
+            <h2>PERFUME</h2>
+            <p>Price: ₱3500</p>
+            <p>Stock: <span class="stock">10</span></p>
+            <input type="number" min="1" max="15" class="quantity" value="">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-price="2500" data-id="4" data-stock="10">
+            <img src="sando.jpg" alt="Sando">
+            <h2>SANDO</h2>
+            <p>Price: ₱2500</p>
+            <p>Stock: <span class="stock">10</span></p>
+            <input type="number" min="1" max="15" class="quantity" value="">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-price="5500" data-id="5" data-stock="10">
+            <img src="toys.jpg" alt="Toys">
+            <h2>TOYS</h2>
+            <p>Price: ₱5500</p>
+            <p>Stock: <span class="stock">10</span></p>
+            <input type="number" min="1" max="15" class="quantity" value="">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="cart">
+        <a href="second page.html" target="_self">View Products</a>
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <p>Total: ₱<span id="total-price">0.00</span></p>
+    </div>
+    <div class="discount">
+        <label for="discount-type">Select Discount:</label>
+        <select id="discount-type">
+            <option value="0">None</option>
+            <option value="0.2">Senior (20%)</option>
+            <option value="0.3">PWD (30%)</option>
+            <option value="0.1">Student (10%)</option>
+        </select>
+        <button class="apply-discount">Apply Discount</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartItems = document.getElementById('cart-items');
+        const totalPrice = document.getElementById('total-price');
+        let total = 0;
+        const cart = {};
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.parentElement;
+                const price = parseFloat(product.getAttribute('data-price'));
+                const productName = product.querySelector('h2').textContent;
+                const quantity = parseInt(product.querySelector('.quantity').value);
+                const stock = parseInt(product.getAttribute('data-stock'));
+                const productId = product.getAttribute('data-id');
+
+                if (quantity > stock) {
+                    alert('Not enough stock available!');
+                    return;
+                }
+
+                if (!cart[productId]) {
+                    cart[productId] = {
+                        name: productName,
+                        price: price,
+                        quantity: 0
+                    };
+                }
+
+                cart[productId].quantity += quantity;
+                product.setAttribute('data-stock', stock - quantity);
+                product.querySelector('.stock').textContent = stock - quantity;
+
+                updateCart();
+            });
+        });
+
+        document.querySelector('.apply-discount').addEventListener('click', () => {
+            const discountType = document.getElementById('discount-type').value;
+            const discount = parseFloat(discountType);
+            const discountedTotal = total - (total * discount);
+            totalPrice.textContent = discountedTotal.toFixed(2);
+        });
+
+        function updateCart() {
+            cartItems.innerHTML = '';
+            total = 0;
+
+            for (let id in cart) {
+                const item = cart[id];
+                const cartItem = document.createElement('li');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    ${item.name} - ₱${item.price} x 
+                    <span class="quantity">${item.quantity}</span>
+                    <div class="quantity-controls">
+                        <button class="minus" data-id="${id}">-</button>
+                        <button class="plus" data-id="${id}">+</button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+                total += item.price * item.quantity;
+            }
+
+            totalPrice.textContent = total.toFixed(2);
+
+            document.querySelectorAll('.minus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = button.getAttribute('data-id');
+                    const product = document.querySelector(`.product[data-id="${productId}"]`);
+                    const stock = parseInt(product.getAttribute('data-stock'));
+                    
+                    if (cart[productId].quantity > 1) {
+                        cart[productId].quantity--;
+                        product.setAttribute('data-stock', stock + 1);
+                        product.querySelector('.stock').textContent = stock + 1;
+                    } else {
+                        delete cart[productId];
+                        product.setAttribute('data-stock', stock + 1);
+                        product.querySelector('.stock').textContent = stock + 1;
+                    }
+                    updateCart();
+                });
+            });
+
+            document.querySelectorAll('.plus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = button.getAttribute('data-id');
+                    const product = document.querySelector(`.product[data-id="${productId}"]`);
+                    const stock = parseInt(product.getAttribute('data-stock'));
+
+                    if (stock > 0) {
+                        cart[productId].quantity++;
+                        product.setAttribute('data-stock', stock - 1);
+                        product.querySelector('.stock').textContent = stock - 1;
+                        updateCart();
+                    } else {
+                        alert('Not enough stock available!');
+                    }
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>

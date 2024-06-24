@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        .product {
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Products</h1>
+    <p>Check out our amazing selection of products:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="product">
+                <td>JEANS</td>
+                <td id="stock-jeans">10</td>
+                <td>
+                    <button onclick="increaseStock('stock-jeans')">Increase</button>
+                    <button onclick="decreaseStock('stock-jeans')">Decrease</button>
+                </td>
+            </tr>
+            <tr class="product">
+                <td>T SHIRT</td>
+                <td id="stock-tshirt">5</td>
+                <td>
+                    <button onclick="increaseStock('stock-tshirt')">Increase</button>
+                    <button onclick="decreaseStock('stock-tshirt')">Decrease</button>
+                </td>
+            </tr>
+            <tr class="product">
+                <td>PERFUME</td>
+                <td id="stock-perfume">8</td>
+                <td>
+                    <button onclick="increaseStock('stock-perfume')">Increase</button>
+                    <button onclick="decreaseStock('stock-perfume')">Decrease</button>
+                </td>
+            </tr>
+            <tr class="product">
+                <td>SANDO</td>
+                <td id="stock-sando">15</td>
+                <td>
+                    <button onclick="increaseStock('stock-sando')">Increase</button>
+                    <button onclick="decreaseStock('stock-sando')">Decrease</button>
+                </td>
+            </tr>
+            <tr class="product">
+                <td>TOYS</td>
+                <td id="stock-toys">20</td>
+                <td>
+                    <button onclick="increaseStock('stock-toys')">Increase</button>
+                    <button onclick="decreaseStock('stock-toys')">Decrease</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        function increaseStock(stockId) {
+            let stockElement = document.getElementById(stockId);
+            let currentStock = parseInt(stockElement.textContent);
+            stockElement.textContent = currentStock + 1;
+        }
+
+        function decreaseStock(stockId) {
+            let stockElement = document.getElementById(stockId);
+            let currentStock = parseInt(stockElement.textContent);
+            if (currentStock > 0) {
+                stockElement.textContent = currentStock - 1;
+            }
+        }
+    </script>
+</body>
+</html>
